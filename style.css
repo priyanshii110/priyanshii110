@@ -113,6 +113,7 @@ body {
   font-family: signature;
   font-size: 100px;
   color: rgba(244, 165, 96, 0.176);
+  z-index: 0;
 }
 .flower.v1 {
   color: rgba(160, 81, 45, 0.32);
@@ -133,7 +134,7 @@ body {
   src: url(./font/DeOrleans-YzwLo.otf);
 }
 .hero_text {
-  margin: 100px 40px;
+  margin: 100px 40px 20px 40px;
 }
 .normal {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

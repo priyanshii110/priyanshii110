@@ -83,6 +83,14 @@
     .wave,.wave2 {
      bottom: -5px;
    }
+
        
+   }
+   .resume{
+    margin:  20px 80px !important;
+    z-index:1000 !important ;
+    font-weight:900;
+    color: rgb(56, 19, 2)
+
    }
    
