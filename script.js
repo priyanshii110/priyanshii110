@@ -1,3 +1,18 @@
+
+
+const load= setTimeout(loading, 2000);
+const newload= setTimeout(remload, 3500);
+
+
+function loading(){
+  document.getElementById("loader").style.opacity="0";
+  document.getElementById('frame').style.transform= "scale(1) rotate(0deg)"
+
+} 
+function remload(){
+  document.getElementById("loader").style.display="none";
+}
+
 var cursor = document.querySelector(".cursor");
 var cursorinner = document.querySelector(".cursor2");
 var a = document.querySelectorAll("a");
@@ -36,7 +51,6 @@ a.forEach((item) => {
 var open = false;
 function handleNav() {
   let nav = document.getElementById("nav");
-  //   nav.style.right !== "0" ? (open = false) : (open = true);
   let icon = document.getElementById("menu_icon");
   let faicon = document.getElementById("faicon");
 
@@ -53,3 +67,4 @@ function handleNav() {
     open = false;
   }
 }
+

@@ -1,10 +1,20 @@
 @import url(about.css);
+body {
+  background: sandybrown;
+  overflow-x: hidden;
+}
+::selection {
+  color: sienna;
+  background: white;
+}
 .frame {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
-  background:#a0522d;
+  background: #a0522d;
+  transform: scale(2) rotate(45deg);
+  transition: 1s ease-in-out;
 }
 
 @keyframes spin {
@@ -16,9 +26,8 @@
   }
 }
 
-
 * {
-  /* cursor: none; */
+  cursor: none;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -28,7 +37,7 @@
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  border: 1px solid sandybrown;
+  border: 1px solid rgb(255, 253, 149);
   transition: all 200ms ease-out;
   position: fixed;
   pointer-events: none;
@@ -42,7 +51,7 @@
   width: 20px;
   height: 20px;
   border-radius: 100%;
-  background-color: sandybrown;
+  background-color: rgb(255, 253, 149);
   opacity: 0.3;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -63,7 +72,6 @@
   opacity: 0.5;
 }
 
-/* navigation menu */
 .menu_icon {
   position: fixed;
   top: 15px;
@@ -84,28 +92,30 @@
   width: 100%;
   transform: scale(0);
   height: 110%;
-  /* background: linear-gradient(45deg, rgba(154, 72, 0, 0.799), rgba(244, 96, 158, 0.799)); */
   z-index: 98;
   background: rgba(244, 165, 96, 0.781);
+  backdrop-filter: blur(10px);
   transition: 0.6s ease-in-out;
   border-radius: 25% 50% 25% 50%;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  /*  */
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .model {
   position: absolute;
   right: -180px;
-  top: -450px;
-  transform:scale(.6)
+  top: -430px;
+  transform: scale(0.6);
 }
+
 .flower {
   position: absolute;
   font-family: signature;
   font-size: 100px;
   color: rgba(244, 165, 96, 0.176);
-  /* animation: spin 8s infinite linear; */
+}
+.flower.v1 {
+  color: rgba(160, 81, 45, 0.32);
 }
 .one {
   top: 0px;
@@ -118,7 +128,6 @@
   font-size: 128px;
 }
 
-/* signature */
 @font-face {
   font-family: signature;
   src: url(./font/DeOrleans-YzwLo.otf);
@@ -139,7 +148,6 @@
   font-size: 130px;
   color: rgb(241, 182, 130);
   padding: 0px 0px 20px 20px;
-  
 }
 
 .box {
@@ -154,7 +162,6 @@
   font-size: 100px;
 }
 
-/* menu grid */
 
 .nav_grid {
   position: relative;
@@ -163,30 +170,32 @@
   transform: translate(-50%, -50%) scale(1);
   width: fit-content;
   height: fit-content;
-  /* border: 4px solid sandybrown; */
-
   padding: 60px;
 }
-.nav_grid a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    font-size: 28px;
-    font-weight: 700;
-    display: block;
-    background: linear-gradient(to right, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all .5s ease-out;
-    padding: 0px 12px;
+.nav_grid a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 700;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgb(255, 255, 255) 50%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all 0.5s ease-out;
+  padding: 0px 12px;
 }
-.nav_grid a:hover{
-    background-position: left bottom;
-    color: sienna;
+.nav_grid a:hover {
+  background-position: left bottom;
+  color: sienna;
 }
-.social{
+.social {
   position: fixed;
   bottom: 0px;
-  left: 10px;
+  left: 0px;
   width: 60px;
   height: fit-content;
   z-index: 101;
@@ -194,22 +203,142 @@
   flex-direction: column;
   align-items: center;
   font-weight: 500;
+  border-radius: 0px 20px 0 0;
 }
 
-.social_item{
+.social_item {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   padding: 10px;
-  color: rgb(16, 11, 7);
-
-  text-shadow:  0 0 30px rgb(9, 7, 4);
+  color: rgb(255, 253, 149);
+  text-shadow: 0 0 30px rgb(255, 253, 149);
 }
-.social_item:hover{
-color: white;
-text-shadow:  0 0 30px white;
+.social_item:hover {
+  color: white;
+  text-shadow: 0 0 20px white;
 }
-.line{
-  height: 140px;
+.line {
+  height: 100px;
   width: 2px;
-  background: rgb(5, 3, 2);
+  background: rgb(255, 253, 149);
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110vh;
+  background: sienna;
+  z-index: 200;
+  transition: 1.5s ease-out;
+}
+
+.main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+}
+
+.a {
+  display: inline-block;
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.a div {
+  position: absolute;
+  border: 5px solid sandybrown;
+  opacity: 1;
+  border-radius: 50%;
+  animation: a 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.a div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes a {
+  0% {
+    top: 90px;
+    left: 90px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 90px;
+    left: 90px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 90px;
+    left: 90px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 180px;
+    height: 180px;
+    opacity: 0;
+  }
+}
+.social_resp{
+  display: none;
+}
+.sayhi{
+  text-decoration: none;
+  padding: 14px 50px;
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background-color: sandybrown;
+  border-radius: 14px;
+  color: sienna;
+  font-weight: 700;
+}
+.sayhi:hover{
+  box-shadow: 0px 0 30px sandybrown;
+}
+@media screen and (max-width: 667px) {
+  .frame {
+    height: 100vh;
+  }
+  .social{
+    display: none;
+  }
+  .model {
+    transform: scale(0.4) translate(50%,50%);
+    right: -180px;
+    bottom: 0vh;
+
+  }
+  .signature {
+    font-size: 80px;
+  }
+  .normal {
+    max-width: 80%;
+    color: rgba(244, 165, 96, 0.906);
+  }
+  .hero_text {
+    margin: 100px 0;
+  } 
+  .box {
+    top: 25%;
+  }
+  .nav {
+    border-radius: 0;   
+  }
+  .social_resp{
+    display: block;
+    width: fit-content;
+    flex-direction: row;
+    margin: 100px auto;
+  }
 }
