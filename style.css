@@ -230,7 +230,7 @@ body {
   left: 0;
   width: 100%;
   height: 110vh;
-  background: sienna;
+  background: #a0522d;
   z-index: 200;
   transition: 1.5s ease-out;
 }
@@ -305,7 +305,7 @@ body {
   font-weight: 700;
 }
 .sayhi:hover{
-  box-shadow: 0px 0 30px sandybrown;
+  box-shadow: 0px 0 30px #f4a460;
 }
 @media screen and (max-width: 667px) {
   .frame {
@@ -342,4 +342,93 @@ body {
     flex-direction: row;
     margin: 100px auto;
   }
+}
+
+
+
+
+
+
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the counter cards */
+.card {
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); this adds the "card" effect */
+  padding: 20px 40px;
+  text-align: center;
+  /* background-color: #f1f1f1; */
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+.project img {
+	display: block;
+	width: 100%;
+} 
+
+.cta {
+	/* --shadowColor: 187 60% 40%; */
+	/* display: flex; */
+	/* flex-wrap: wrap; */
+	background: #f4a460;
+	max-width: 50rem;
+	width: 100%;
+	box-shadow: 0.65rem 0.65rem 0 #a0522d;
+	border-radius: 0.8rem;
+	overflow: hidden;
+	border: 0.5rem solid;
+}
+
+.cta img {
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
+	flex: 1 1 300px;
+	outline: 0.5rem solid;
+}
+
+.cta__text-column {
+	padding: min(2rem, 5vw) min(2rem, 5vw) min(2.5rem, 5vw);
+	flex: 1 0 50%;
+}
+
+.cta__text-column > * + * {
+	margin: min(1.5rem, 2.5vw) 0 0 0;
+}
+
+.cta a {
+	display: inline-block;
+	color: #8a3409;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	background: #f4a460;
+	border-radius: 0.6rem;
+	font-weight: 600;
+	border: 0.35rem solid;
 }
